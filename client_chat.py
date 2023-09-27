@@ -13,14 +13,10 @@ IP = ''
 public_key, private_key = rsa.newkeys(2048)
 public_partner = None
 
-#choice = input('Host (1) or connect(2): ')
-
 client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 client.connect((IP, 7777))
 public_partner = rsa.PublicKey.load_pkcs1(client.recv(2048))
 client.send(public_key.save_pkcs1("PEM"))
-
-
 
 
 def send_message(c):

@@ -13,9 +13,6 @@ IP = ''
 public_key, private_key = rsa.newkeys(2048)
 public_partner = None
 
-#choice = input('Host (1) or connect(2): ')
-
-
 server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 server.bind((IP, 7777))
 server.listen()
